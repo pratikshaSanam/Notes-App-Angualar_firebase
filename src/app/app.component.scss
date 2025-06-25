@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #FFCC80, #FFCC80);
+  font-family: 'Segoe UI', sans-serif;
+  gap: 2rem;
+  flex-wrap: wrap;
+ 
+}
+
+.left-section {
+  flex: 1;
+  min-width: 300px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.left-section img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.add-button {
+  background-color: #3498DB;
+  color: #000;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: #fff176;
+  }
+}
+
+.note-form {
+  margin-bottom: 2rem;
+}
+
+.all-notes-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+}

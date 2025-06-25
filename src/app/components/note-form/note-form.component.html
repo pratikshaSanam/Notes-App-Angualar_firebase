@@ -1,1 +1,31 @@
-<p>note-form works!</p>
+<form class="note-form" (ngSubmit)="submit()" #noteForm="ngForm">
+  <input
+    type="text"
+    name="title"
+    [(ngModel)]="title"
+    placeholder="Enter note title"
+    required
+  />
+
+  <textarea
+    name="content"
+    [(ngModel)]="content"
+    placeholder="Enter note content"
+    rows="4"
+    required
+  ></textarea>
+
+  <div class="form-buttons">
+    <button type="submit" [disabled]="!noteForm.valid">
+      {{ selectedNote() ? 'Update Note' : 'Add Note' }}
+    </button>
+
+    <button
+      type="button"
+      *ngIf="selectedNote()"
+      (click)="cancelEdit()"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

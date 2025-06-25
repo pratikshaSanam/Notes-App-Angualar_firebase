@@ -1,1 +1,45 @@
-<p>note-list works!</p>
+
+<div class="note-list-container">
+  <h2>📋 My Notes</h2>
+
+  <!-- Edit Form -->
+  <form *ngIf="selectedNote" class="edit-form" (ngSubmit)="saveNote()">
+    <h3>Editing Note</h3>
+
+    <input
+      type="text"
+      [(ngModel)]="editedTitle"
+      name="title"
+      placeholder="Edit title"
+      required
+    />
+
+    <textarea
+      [(ngModel)]="editedContent"
+      name="content"
+      placeholder="Edit content"
+      rows="4"
+      required
+    ></textarea>
+
+    <div class="actions">
+      <button type="submit">💾 Save</button>
+      <button type="button" (click)="cancelEdit()">❌ Cancel</button>
+    </div>
+  </form>
+
+  <!-- Notes List -->
+  <ng-container *ngIf="notes.length; else noNotes">
+    <div *ngFor="let note of notes">
+      <app-note-item
+        [note]="note"
+        (edit)="editNote(note)"
+        (remove)="deleteNote(note.id)"
+      ></app-note-item>
+    </div>
+  </ng-container>
+
+  <ng-template #noNotes>
+    <p>No notes found. Add your first note!</p>
+  </ng-template>
+</div>

@@ -1,1 +1,11 @@
-<p>note-item works!</p>
+<div class="note-item">
+  <h4>{{ note.title }}</h4>
+  <p>{{ note.content }}</p>
+  <small>Last updated: {{ note.updatedAt | date : 'short' }}</small>
+
+  <div class="actions">
+    <button (click)="edit.emit(note)">✏️ Edit</button>
+    <button (click)="remove.emit(note.id)">🗑️ Delete</button>
+  </div>
+</div>
+<hr />

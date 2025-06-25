@@ -1,0 +1,49 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  .form-buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.4rem 1rem;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:first-child {
+        background: #2ecc71;      // Add / Update
+      }
+      &:first-child:hover {
+        background: #27ae60;
+      }
+
+      &:last-child {
+        background: #e74c3c;      // Cancel
+      }
+      &:last-child:hover {
+        background: #c0392b;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
